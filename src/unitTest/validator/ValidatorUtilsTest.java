@@ -4,6 +4,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import validator.ValidatorUtils;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
@@ -16,5 +17,20 @@ class ValidatorUtilsTest {
         assertTrue(ValidatorUtils.validateGrid(someGrid));
     }
 
-    
+    @DisplayName("ValidateGRid should be able to return false if duplicate on line")
+    @Test
+    void validateGrid2() {
+        int[][] someInvalidGrid = {{1, 1}};
+        boolean result = ValidatorUtils.validateGrid(someInvalidGrid);
+        assertFalse(result);
+    }
+
+    @DisplayName("ValidateGrid should be able to return false for duplicate on second line")
+    @Test
+    void validateGrid3() {
+        int[][] someInvalidGrid = {{2,3},{1, 1}};
+        boolean result = ValidatorUtils.validateGrid(someInvalidGrid);
+        assertFalse(result);
+
+    }
 }
