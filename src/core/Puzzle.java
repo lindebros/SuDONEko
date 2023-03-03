@@ -1,6 +1,8 @@
 package core;
 
 public class Puzzle {
-    int[][] grid;
+    int[][] rows;
+    int[][] columns;
+    int[][] sections;
 
 }

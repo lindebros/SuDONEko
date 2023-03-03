@@ -31,6 +31,21 @@ class ValidatorUtilsTest {
         int[][] someInvalidGrid = {{2,3},{1, 1}};
         boolean result = ValidatorUtils.validateGrid(someInvalidGrid);
         assertFalse(result);
+    }
 
+    @DisplayName("ValidateLine should return true for good lines")
+    @Test
+    void validateLine1() {
+        int[] someLine = {1,2};
+        boolean result = ValidatorUtils.validateGridLine(someLine);
+        assertTrue(result);
+    }
+
+    @DisplayName("ValidateLine should return false for bad lines")
+    @Test
+    void validateLine2() {
+        int[] someLine = {1,1};
+        boolean result = ValidatorUtils.validateGridLine(someLine);
+        assertFalse(result);
     }
 }
